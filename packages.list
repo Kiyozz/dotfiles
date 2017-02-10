@@ -40,5 +40,5 @@ phpmd
 phpcs
 terminator
 wine
-
+maven
 
