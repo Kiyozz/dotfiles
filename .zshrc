@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/usr/share/oh-my-zsh
+  export ZSH=/home/kiyoz/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -85,7 +85,12 @@ export LC_ALL=fr_FR.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$HOME/.config/composer/vendor/bin:$PATH
+# default exports
+
+export PATH=$HOME/.config/composer/vendor/bin:/d/opt/sonarqube/bin/windows-x86-64:$PATH
+export ANDROID_HOME=/opt/android_sdk_tools
+
+# aliases
 
 alias s="php bin/console"
 alias s-fix="s doctrine:fixtures:load"
@@ -93,5 +98,26 @@ alias s-cc="s cache:clear"
 alias gpush="git push origin"
 alias gcom="git commit"
 alias s2="php app/console"
+alias s-srv="s server:run"
+alias s2-srv="s2 server:run"
+alias s2-fix="s2 doctrine:fixtures:load"
+alias composer="composer.bat"
+alias phpunit="phpunit.bat"
+alias sonar="sonar.cmd"
+alias mvn-init="mvnInit"
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# functions
+
+function mvnInit() {
+    mvn archetype:generate -DgroupId=$1 -DartifactId=$2 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+}
+
+# sources
+
+source /home/kiyoz/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# fix for extra outputs
+
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
