@@ -1,14 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/kiyoz/.oh-my-zsh
+ export ZSH=/home/kiyoz/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="pure"
+ZSH_THEME="refined"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -29,7 +29,7 @@ ZSH_THEME="pure"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -37,7 +37,7 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -51,7 +51,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git composer common-aliases)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,34 +87,21 @@ export LC_ALL=fr_FR.UTF-8
 
 # default exports
 
-export PATH=$HOME/.config/composer/vendor/bin:/d/opt/sonarqube/bin/windows-x86-64:$PATH
-export ANDROID_HOME=/opt/android_sdk_tools
+export PATH=$HOME/.config/composer/vendor/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/default-java
 
 # aliases
 
 alias s="php bin/console"
 alias s-fix="s doctrine:fixtures:load"
-alias s-cc="s cache:clear"
-alias gpush="git push origin"
-alias gcom="git commit"
 alias s2="php app/console"
 alias s-srv="s server:run"
 alias s2-srv="s2 server:run"
 alias s2-fix="s2 doctrine:fixtures:load"
-alias composer="composer.bat"
-alias phpunit="phpunit.bat"
-alias sonar="sonar.cmd"
-alias mvn-init="mvnInit"
-
-# functions
-
-function mvnInit() {
-    mvn archetype:generate -DgroupId=$1 -DartifactId=$2 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-}
 
 # sources
 
-source /home/kiyoz/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_LIBRARY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # fix for extra outputs
 
