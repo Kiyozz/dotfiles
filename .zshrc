@@ -87,8 +87,8 @@ export LC_ALL=fr_FR.UTF-8
 
 # default exports
 
-export PATH=$HOME/.config/composer/vendor/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/default-java
+export PATH=$HOME/.config/composer/vendor/bin:/opt/node/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/default
 
 # aliases
 
