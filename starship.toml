@@ -1,0 +1,16 @@
+[git_status]
+format = '([\[$ahead$behind\]]($style) )'
+
+[nodejs]
+style = "green"
+format = "[$symbol$version]($style) "
+
+[package]
+format = "[$symbol$version]($style) "
+
+[character]
+success_symbol = "[❯](blue)"
+error_symbol = "[✖](bold cyan)"
+
+[battery]
+disabled = true
