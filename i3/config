@@ -179,7 +179,8 @@ set $monitorRight DP-4
 set $monitorLeft HDMI-0
 
 # Screens xrandr
-exec --no-startup-id xrandr --output $monitorLeft --auto --left-of $monitorRight
+exec --no-startup-id xrandr --output $monitorLeft --rate 144.00 --mode 1920x1080 --left-of $monitorRight
+exec --no-startup-id xrandr --output $monitorRight --rate 144.00 --mode 1920x1080 --right-of $monitorLeft
 
 exec --no-startup-id compton
 exec --no-startup-id google-chrome
@@ -192,6 +193,10 @@ assign [class="Termite"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Code|jetbrains-idea"] $ws1
 assign [class="Slack"] $ws4
+
+workspace $ws4 output $monitorLeft
+workspace $ws1 output $monitorRight
+workspace $ws2 output $monitorLeft
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

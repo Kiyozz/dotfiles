@@ -6,7 +6,7 @@ style = "bold green"
 format = "[$symbol$version]($style) "
 
 [package]
-format = "[$symbol $version]($style) "
+format = "[$symbol$version]($style) "
 
 [character]
 success_symbol = "[❯](cyan)"
