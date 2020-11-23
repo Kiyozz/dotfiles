@@ -2,15 +2,15 @@
 format = '([\[$ahead$behind\]]($style) )'
 
 [nodejs]
-style = "green"
+style = "bold green"
 format = "[$symbol$version]($style) "
 
 [package]
-format = "[$symbol$version]($style) "
+format = "[$symbol $version]($style) "
 
 [character]
-success_symbol = "[❯](blue)"
-error_symbol = "[✖](bold cyan)"
+success_symbol = "[❯](cyan)"
+error_symbol = "[✖](red)"
 
 [battery]
 disabled = true
