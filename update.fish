@@ -29,3 +29,5 @@ cp -r ~/.config/rofi/* $DOTFILES/rofi/
 echo "Update starship.toml"
 cp -r ~/.config/starship.toml $DOTFILES/starship.toml
 
+echo "Update dunst"
+cp -r ~/.config/dunst $DOTFILES/dunst
