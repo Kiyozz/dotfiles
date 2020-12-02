@@ -179,6 +179,7 @@ set $monitorLeft HDMI-0
 # Screens xrandr
 exec --no-startup-id xrandr --output $monitorLeft --rate 144.00 --mode 1920x1080 --left-of $monitorRight
 exec --no-startup-id xrandr --output $monitorRight --rate 144.00 --mode 1920x1080 --right-of $monitorLeft
+exec --no-startup-id xrandr --output $monitorLeft --rate 144.00 --mode 1920x1080 --left-of $monitorRight
 
 exec --no-startup-id compton
 exec --no-startup-id google-chrome
