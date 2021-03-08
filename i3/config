@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetbrainsMono Nerd Font 10
+font pango:Fira Sans 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -173,13 +173,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $monitorRight DP-4
-set $monitorLeft HDMI-0
+set $monitorRight DP-2
+set $monitorLeft DP-4
 
 # Screens xrandr
-exec --no-startup-id xrandr --output $monitorLeft --rate 144.00 --mode 1920x1080 --left-of $monitorRight
-exec --no-startup-id xrandr --output $monitorRight --rate 144.00 --mode 1920x1080 --right-of $monitorLeft
-exec --no-startup-id xrandr --output $monitorLeft --rate 144.00 --mode 1920x1080 --left-of $monitorRight
+exec --no-startup-id xrandr --output $monitorLeft --mode 3840x2160 --scale 1x1 --output $monitorRight --mode 1920x1080 --rate 144.00 --right-of $monitorLeft
 
 exec --no-startup-id compton
 exec --no-startup-id google-chrome
@@ -190,7 +188,6 @@ exec --no-startup-id ckb-next --background
 exec --no-startup-id code
 exec --no-startup-id slack
 
-assign [class="Termite"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Code|jetbrains-idea"] $ws1
 assign [class="Slack"] $ws4
@@ -203,7 +200,7 @@ workspace $ws2 output $monitorLeft
 # finds out, if available)
 
 for_window [class=".*"] border pixel 2
-for_window [class=".*"] title_format " %title"
+for_window [class=".*"] title_format "  %title"
 gaps inner 5
 smart_gaps on
 smart_borders on
@@ -217,4 +214,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-exec_always --no-startup-id "killall polybar; polybar -r default"
+exec_always --no-startup-id "killall polybar; bash /home/lyrod/.polybar.sh"
